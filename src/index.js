@@ -31,6 +31,17 @@ module.exports = (req, res) => {
   let firstColor = helper.hashStringToColor(hash)
   firstColor = new Color(firstColor).saturate(0.5)
 
+  const lightning = firstColor.hsl().color[2]
+  if (lightning < 25) {
+    firstColor = firstColor.lighten(3)
+  }
+  if (lightning > 25 && lightning < 40) {
+    firstColor = firstColor.lighten(0.8)
+  }
+  if (lightning > 75) {
+    firstColor = firstColor.darken(0.4)
+  }
+
   let avatar = svg.replace('$FIRST', firstColor.hex())
   avatar = avatar.replace('$SECOND', helper.getMatchingColor(firstColor).hex())
 
