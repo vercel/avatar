@@ -13,7 +13,7 @@ The default avatar is `png` with a size of 120*120px
 
 Each name will generate a unique `avatar`. Just replace `tobiaslins` with an `username` or `email`
 
-### PNG
+### PNG avatar
 ```
 https://avatarservice.herokuapp.com/tobiaslins
 ```
@@ -28,7 +28,7 @@ https://avatarservice.herokuapp.com/tobiaslins?size=30
 
 ![Avatar for tobiaslins](https://avatarservice.herokuapp.com/tobiaslins?size=30)
 
-### SVG
+### SVG avatar
 It is possible to receive an svg avatar by adding the parameter `type=svg`
 ```
 https://avatarservice.herokuapp.com/tobiaslins?type=svg
