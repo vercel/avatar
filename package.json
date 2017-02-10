@@ -1,10 +1,10 @@
 {
   "name": "avatar",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "tobiaslins/avatar",
   "scripts": {
-    "start": "micro"
+    "start": "micro src/index.js"
   },
   "author": "Tobias Lins <tobias@lins.in>",
   "license": "MIT",
@@ -13,17 +13,5 @@
     "micro": "^7.0.3",
     "sharp": "^0.17.1",
     "url": "^0.11.0"
-  },
-  "devDependencies": {
-    "eslint-config-xo-react": "^0.10.0",
-    "xo": "^0.17.1"
-  },
-  "xo": {
-    "esnext": true,
-    "semicolon": false,
-    "space": true,
-    "env": [
-      "node"
-    ]
   }
 }

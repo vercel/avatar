@@ -9,7 +9,7 @@ const helper = require('./helper')
 
 module.exports = (req, res) => {
   const {pathname, query} = url.parse(req.url, true)
-  let imageSize = 150
+  let imageSize = 120
   const maxSize = 1000
 
   if (pathname === '/favicon.ico') {
