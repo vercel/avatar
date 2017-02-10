@@ -1,7 +1,7 @@
 # avatar ![](https://avatarservice.herokuapp.com/avatar?size=20) ![](https://avatarservice.herokuapp.com/1?size=20) ![](https://avatarservice.herokuapp.com/github?size=20) ![](https://avatarservice.herokuapp.com/love?size=20) ![](https://avatarservice.herokuapp.com/node?size=20)
 
 
-Avatar generates beautiful generated gradient avatars for your app or homepage.
+Avatar generates beautiful gradient avatars for your app or homepage (for example if they didn't upload one)
 
 Avatar is build on top of [`micro`](https://github.com/zeit/micro) and is hosted on `heroku`
 
@@ -9,7 +9,7 @@ Avatar is build on top of [`micro`](https://github.com/zeit/micro) and is hosted
 
 To generate an avatar just embed following url `https://avatarservice.herokuapp.com/`. Now you can append a username to generate an avatar
 
-The default avatar is `png` with a size of 120*120px
+You will receive a `png` image with a size of 120*120px
 
 Each name will generate a unique `avatar`. Just replace `tobiaslins` with an `username` or `email`
 
