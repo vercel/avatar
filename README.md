@@ -1,13 +1,18 @@
 # avatar
 
-Avatar as a microservice generates beautiful generated avatars for your app or homepage.
+Avatar generates beautiful generated gradient avatars for your app or homepage.
+
+Avatar is build on top of [`micro`](https://github.com/zeit/micro) and is hosted on `heroku`
 
 ## How to use avatar
 
-Avatar is hosted on `heroku`
-
 To generate an avatar just embed following url
+
 The default avatar is `png` with a size of 120*120px
+
+Each name will generate a unique `avatar`. Just replace `tobiaslins` with an `username` or `email`
+
+### PNG
 ```
 https://avatarservice.herokuapp.com/tobiaslins
 ```
