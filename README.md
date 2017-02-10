@@ -1,4 +1,5 @@
-# avatar ![](https://avatarservice.herokuapp.com/avatar?size=20)
+# avatar ![](https://avatarservice.herokuapp.com/avatar?size=20) ![](https://avatarservice.herokuapp.com/1?size=20) ![](https://avatarservice.herokuapp.com/github?size=20) ![](https://avatarservice.herokuapp.com/love?size=20) ![](https://avatarservice.herokuapp.com/node?size=20)
+
 
 Avatar generates beautiful generated gradient avatars for your app or homepage.
 
@@ -22,18 +23,13 @@ https://avatarservice.herokuapp.com/tobiaslins
 ### Custom size
 
 ```
-https://avatarservice.herokuapp.com/test?size=30
+https://avatarservice.herokuapp.com/tobiaslins?size=30
 ```
 
-![Avatar for tobiaslins](https://avatarservice.herokuapp.com/test?size=30)
+![Avatar for tobiaslins](https://avatarservice.herokuapp.com/tobiaslins?size=30)
 
 ### SVG
 It is possible to receive an svg avatar by adding the parameter `type=svg`
 ```
 https://avatarservice.herokuapp.com/tobiaslins?type=svg
 ```
-
-### Examples
-![](https://avatarservice.herokuapp.com/1?size=30) ![](https://avatarservice.herokuapp.com/github?size=30) ![](https://avatarservice.herokuapp.com/love?size=30) ![](https://avatarservice.herokuapp.com/node?size=30)
-![](https://avatarservice.herokuapp.com/heroku?size=30)
-![](https://avatarservice.herokuapp.com/micro?size=30)
