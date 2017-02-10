@@ -40,4 +40,4 @@ If you just want to use random avatars without providing usernames you can use f
 ```
 https://avatarservice.herokuapp.com/random
 ```
-![Random Avatar](https://avatarservice.herokuapp.com/random)
+![Random Avatar](https://avatarservice.herokuapp.com/random?size=50)
