@@ -32,3 +32,8 @@ It is possible to receive an svg avatar
 ```
 https://avatarservice.herokuapp.com/tobiaslins?type=svg
 ```
+
+### Examples
+![](https://avatarservice.herokuapp.com/1?size=30) ![](https://avatarservice.herokuapp.com/github?size=30) ![](https://avatarservice.herokuapp.com/love?size=30) ![](https://avatarservice.herokuapp.com/node?size=30)
+![](https://avatarservice.herokuapp.com/heroku?size=30)
+![](https://avatarservice.herokuapp.com/micro?size=30)
