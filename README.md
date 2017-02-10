@@ -33,3 +33,11 @@ It is possible to receive an svg avatar by adding the parameter `type=svg`
 ```
 https://avatarservice.herokuapp.com/tobiaslins?type=svg
 ```
+
+### Random avatar
+If you just want to use random avatars without providing usernames you can use following endpoint
+
+```
+https://avatarservice.herokuapp.com/random
+```
+![Random Avatar](https://avatarservice.herokuapp.com/random)

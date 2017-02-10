@@ -8,14 +8,18 @@ const svg = require('./svg')
 const helper = require('./helper')
 
 module.exports = (req, res) => {
-  const {pathname, query} = url.parse(req.url, true)
+  let {pathname, query} = url.parse(req.url, true)
   let imageSize = 120
   const maxSize = 1000
 
   if (pathname === '/favicon.ico') {
     return ''
   }
-  res.setHeader('Cache-Control', 'max-age=2592000, public')
+  if (pathname === '/random') {
+    pathname = Math.random().toString()
+  } else {
+    res.setHeader('Cache-Control', 'max-age=2592000, public')
+  }
   if (query.type === 'svg') {
     res.setHeader('Content-Type', 'svg+xml')
   } else {
