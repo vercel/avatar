@@ -7,7 +7,7 @@ Avatar is build on top of [`micro`](https://github.com/zeit/micro) and is hosted
 
 ## How to use avatar
 
-To generate an avatar just embed following url
+To generate an avatar just embed following url `https://avatarservice.herokuapp.com/`. Now you can append a username to generate an avatar
 
 The default avatar is `png` with a size of 120*120px
 
