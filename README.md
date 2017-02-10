@@ -1,4 +1,4 @@
-# avatar ![](https://avatarservice.herokuapp.com/avatar?size=30)
+# avatar ![](https://avatarservice.herokuapp.com/avatar?size=20)
 
 Avatar generates beautiful generated gradient avatars for your app or homepage.
 
