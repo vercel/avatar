@@ -29,8 +29,10 @@ https://avatarservice.herokuapp.com/tobiaslins?size=30
 ![Avatar for tobiaslins](https://avatarservice.herokuapp.com/tobiaslins?size=30)
 
 ### SVG avatar
-It is possible to receive an svg avatar by adding the parameter `type=svg`
+It is possible to receive an svg avatar by adding the extension `.svg` or the parameter `type=svg`
+
 ```
+https://avatarservice.herokuapp.com/tobiaslins.svg
 https://avatarservice.herokuapp.com/tobiaslins?type=svg
 ```
 

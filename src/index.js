@@ -1,5 +1,7 @@
 const url = require('url')
 const image = require('./image')
+const svgExt = /\.svg$/;
+const pngExt = /\.png$/;
 
 module.exports = (req, res) => {
   let {pathname, query} = url.parse(req.url, true)
@@ -12,15 +14,10 @@ module.exports = (req, res) => {
   } else {
     res.setHeader('Cache-Control', 'max-age=2592000, public')
   }
-  if (query.type === 'svg') {
+  if (query.type === 'svg' || svgExt.test(pathname)) {
     res.setHeader('Content-Type', 'svg+xml')
-  } else {
-    res.setHeader('Content-Type', 'image/png')
+    return image.generateSVG(pathname.replace(svgExt, ''));
   }
-
-  if (query.type === 'svg') {
-    return image.generateSVG(pathname)
-  }
-
-  return image.generatePNG(pathname, query.size)
+  res.setHeader('Content-Type', 'image/png')
+  return image.generatePNG(pathname.replace(pngExt, ''), query.size)
 }
