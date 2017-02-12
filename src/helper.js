@@ -1,3 +1,5 @@
+'use strict'
+
 function djb2(str) {
   let hash = 5381
   for (let i = 0; i < str.length; i++) {
@@ -15,7 +17,7 @@ function shouldChangeColor(color) {
   return false
 }
 
-exports.hashStringToColor = function (str) {
+function hashStringToColor(str) {
   const hash = djb2(str)
   const r = (hash & 0xFF0000) >> 16
   const g = (hash & 0x00FF00) >> 8
@@ -23,7 +25,7 @@ exports.hashStringToColor = function (str) {
   return '#' + ('0' + r.toString(16)).substr(-2) + ('0' + g.toString(16)).substr(-2) + ('0' + b.toString(16)).substr(-2)
 }
 
-exports.getMatchingColor = function (firstColor) {
+function getMatchingColor(firstColor) {
   let color = firstColor
   if (color.dark()) {
     color = color.saturate(0.3).rotate(90)
@@ -34,4 +36,10 @@ exports.getMatchingColor = function (firstColor) {
     color = color.rotate(-200).saturate(0.5)
   }
   return color
+}
+
+module.exports = {
+  getMatchingColor,
+  hashStringToColor,
+  shouldChangeColor
 }
