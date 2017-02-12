@@ -35,9 +35,9 @@ https://avatarservice.herokuapp.com/tobiaslins?type=svg
 ```
 
 ### Random avatar
-If you just want to use random avatars without providing usernames you can use following endpoint
+If you just want to use random avatars without providing usernames you can use the root endpoint
 
 ```
-https://avatarservice.herokuapp.com/random
+https://avatarservice.herokuapp.com/
 ```
-![Random Avatar](https://avatarservice.herokuapp.com/random?size=50)
+![Random Avatar](https://avatarservice.herokuapp.com?size=50)
