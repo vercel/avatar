@@ -15,7 +15,7 @@ module.exports = (req, res) => {
     res.setHeader('Cache-Control', 'max-age=2592000, public')
   }
   if (query.type === 'svg' || svgExt.test(pathname)) {
-    res.setHeader('Content-Type', 'svg+xml')
+    res.setHeader('Content-Type', 'image/svg+xml')
     return image.generateSVG(pathname.replace(svgExt, ''));
   }
   res.setHeader('Content-Type', 'image/png')
