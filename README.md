@@ -3,7 +3,7 @@
 
 Avatar generates beautiful gradient avatars for your app or homepage (for example if they didn't upload one)
 
-Avatar is build on top of [`micro`](https://github.com/zeit/micro) and is hosted on `heroku`
+Avatar is build on top of [`micro`](https://github.com/zeit/micro) and is hosted on [`heroku`](https://heroku.com)
 
 ## How to use avatar
 
