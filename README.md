@@ -3,11 +3,11 @@
 
 Avatar generates beautiful gradient avatars for your app or homepage (for example if they didn't upload one)
 
-Avatar is build on top of [`micro`](https://github.com/zeit/micro) and is hosted on [`heroku`](https://heroku.com)
+Avatar is built on top of [`micro`](https://github.com/zeit/micro) and is hosted on [`Heroku`](https://heroku.com)
 
 ## How to use avatar
 
-To generate an avatar just embed following url `https://avatar.tobi.sh/`. Now you can append a username to generate an avatar
+To generate an avatar just embed following URL `https://avatar.tobi.sh/`. Now you can append a username to generate an avatar
 
 You will receive a `png` image with a size of 120*120px
 
@@ -37,7 +37,7 @@ https://avatar.tobi.sh/tobiaslins?type=svg
 ```
 
 ### Random avatar
-If you just want to use random avatars without providing usernames you can use the root endpoint
+If you just want to use random avatars without providing usernames, you can use the root endpoint
 
 ```
 https://avatar.tobi.sh/
