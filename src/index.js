@@ -5,7 +5,6 @@ const pngExt = /\.png$/;
 
 module.exports = (req, res) => {
   let {pathname, query} = url.parse(req.url, true)
-
   if (pathname === '/favicon.ico') {
     return ''
   }
@@ -16,7 +15,7 @@ module.exports = (req, res) => {
   }
   if (query.type === 'svg' || svgExt.test(pathname)) {
     res.setHeader('Content-Type', 'image/svg+xml')
-    return image.generateSVG(pathname.replace(svgExt, ''));
+    return image.generateSVG(pathname.replace(svgExt, ''), query.size);
   }
   res.setHeader('Content-Type', 'image/png')
   return image.generatePNG(pathname.replace(pngExt, ''), query.size)

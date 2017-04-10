@@ -6,7 +6,7 @@ const Color = require('color')
 const svg = require('./svg')
 const helper = require('./helper')
 
-function generateGradient(username) {
+function generateGradient(username, size) {
   const hash = crypto.createHash('md5').update(username).digest('hex')
 
   let firstColor = helper.hashStringToColor(hash)
@@ -26,19 +26,25 @@ function generateGradient(username) {
   let avatar = svg.replace('$FIRST', firstColor.hex())
   avatar = avatar.replace('$SECOND', helper.getMatchingColor(firstColor).hex())
 
+  avatar = avatar.replace(/(\$SIZE)/g, size)
+
   return avatar
 }
 
-exports.generateSVG = function (username) {
-  return generateGradient(username)
+function parseSize(size) {
+  if (size && size.match(/^-?\d+$/)) {
+    return parseInt(size, 10)
+  }
+  return 120
+}
+
+exports.generateSVG = function (username, size) {
+  size = parseSize(size)
+  return generateGradient(username, size)
 }
 
 exports.generatePNG = function (username, size) {
-  size = size || '120'
-  const maxSize = 1000
-  if (size && size.match(/^-?\d+$/) && size <= maxSize) {
-    size = parseInt(size, 10)
-  }
-  const svg = generateGradient(username)
-  return sharp(new Buffer(svg)).resize(size, size).png()
+  size = parseSize(size)
+  const svg = generateGradient(username, size)
+  return sharp(new Buffer(svg)).png()
 }
