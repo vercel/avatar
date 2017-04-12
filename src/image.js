@@ -32,7 +32,8 @@ function generateGradient(username, size) {
 }
 
 function parseSize(size) {
-  if (size && size.match(/^-?\d+$/)) {
+  const maxSize = 1000
+  if (size && size.match(/^-?\d+$/) && size <= maxSize) {
     return parseInt(size, 10)
   }
   return 120
