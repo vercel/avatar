@@ -39,12 +39,12 @@ function parseSize(size) {
   return 120
 }
 
-exports.generateSVG = function (username, size) {
+exports.generateSVG = function(username, size) {
   size = parseSize(size)
   return generateGradient(username, size)
 }
 
-exports.generatePNG = function (username, size) {
+exports.generatePNG = function(username, size) {
   size = parseSize(size)
   const svg = generateGradient(username, size)
   return sharp(new Buffer(svg)).png()
