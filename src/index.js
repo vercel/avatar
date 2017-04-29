@@ -13,10 +13,7 @@ module.exports = (req, res) => {
     pathname = Math.random().toString()
   } else {
     res.setHeader('Cache-Control', 'max-age=2592000, public')
-    res.setHeader(
-      'ETag',
-      crypto.createHash('md5').update(pathname).digest('hex')
-    )
+    res.setHeader('Last-Modified', 'Mon, 03 Jan 2011 17:45:57 GMT')
   }
   if (query.type === 'svg' || svgExt.test(pathname)) {
     res.setHeader('Content-Type', 'image/svg+xml')
