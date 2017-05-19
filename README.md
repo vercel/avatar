@@ -43,3 +43,8 @@ If you just want to use random avatars without providing usernames, you can use 
 https://avatar.tobi.sh/
 ```
 ![Random Avatar](https://avatar.tobi.sh?size=50)
+
+## Usecase
+Are you creating a new app/website with an user system?
+
+If your user doesn't want to load a custom profile picture - you can show him a unique generated avatar
