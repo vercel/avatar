@@ -17,7 +17,7 @@ module.exports = (req, res) => {
   }
   if (query.type === 'svg' || svgExt.test(pathname)) {
     res.setHeader('Content-Type', 'image/svg+xml')
-    return image.generateSVG(pathname.replace(svgExt, ''), query.size)
+    return image.generateSVG(pathname.replace(svgExt, ''), query.text || '', query.size)
   }
   res.setHeader('Content-Type', 'image/png')
   return image.generatePNG(pathname.replace(pngExt, ''), query.size)
