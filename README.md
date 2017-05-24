@@ -36,6 +36,16 @@ https://avatar.tobi.sh/tobiaslins.svg
 https://avatar.tobi.sh/tobiaslins?type=svg
 ```
 
+### Add initials
+It is possible to add initials or a text to the avatar by adding the `text` parameter.
+
+*Feature only working with SVG*
+
+```
+https://avatar.tobi.sh/tobiaslins.svg?text=TL
+```
+![Avatar for tobiaslins](https://avatar.tobi.sh/tobiaslins.svg?text=TL)
+
 ### Random avatar
 If you just want to use random avatars without providing usernames, you can use the root endpoint
 
