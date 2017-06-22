@@ -2,6 +2,6 @@
   "name": "Avatar",
   "description": "A easy avatar generator for apps and websites.",
   "repository": "https://github.com/tobiaslins/avatar",
-  "logo": "https://avatar.tobi.sh/",
+  "logo": "https://trilleplay.net",
   "keywords": ["node", "express", "static"]
 }
