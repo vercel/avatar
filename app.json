@@ -2,6 +2,6 @@
   "name": "Avatar",
   "description": "A easy avatar generator for apps and websites.",
   "repository": "https://github.com/tobiaslins/avatar",
-  "logo": "https://camo.githubusercontent.com/cb1f87370ab5cc7a730ef384e3da1bc5e4ac9567/68747470733a2f2f6176617461722e746f62692e73682f6176617461723f73697a653d3230",
+  "logo": "https://avatar.tobi.sh/",
   "keywords": ["node", "express", "static"]
 }
