@@ -64,4 +64,4 @@ Do you want to deploy avatar to Heroku!
 We got all that covered for you.
 Just click this button:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/trilleplay/avatar)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tobiaslins/avatar)
