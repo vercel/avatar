@@ -58,3 +58,10 @@ https://avatar.tobi.sh/
 Are you creating a new app/website with an user system?
 
 If your user doesn't want to load a custom profile picture - you can show him a unique generated avatar
+
+### Deploy to Heroku
+Do you want to deploy avatar to Heroku!
+We got all that covered for you.
+Just click this button:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tobiaslins/avatar)

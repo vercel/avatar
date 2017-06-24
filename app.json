@@ -1,0 +1,7 @@
+{
+  "name": "Avatar",
+  "description": "A easy avatar generator for apps and websites.",
+  "repository": "https://github.com/tobiaslins/avatar",
+  "logo": "https://avatar.tobi.sh/",
+  "keywords": ["node", "express", "static"]
+}
