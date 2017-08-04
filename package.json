@@ -4,14 +4,18 @@
   "main": "src/index.js",
   "repository": "tobiaslins/avatar",
   "scripts": {
-    "start": "micro src/index.js"
+    "start": "NODE_ENV=production micro src/index.js",
+    "dev": "micro-dev src/index.js"
   },
   "author": "Tobias Lins <tobias@lins.in>",
   "license": "MIT",
   "dependencies": {
-    "color": "^1.0.3",
-    "micro": "^7.0.3",
-    "sharp": "^0.17.3",
+    "color": "^2.0.0",
+    "micro": "^8.0.1",
+    "sharp": "^0.18.2",
     "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "micro-dev": "^1.1.0"
   }
 }
