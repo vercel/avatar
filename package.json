@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "repository": "tobiaslins/avatar",
   "scripts": {
-    "start": "NODE_ENV=production micro src/index.js",
+    "start": "NODE_ENV=production micro src/index.js -p ${PORT:-3000}",
     "dev": "micro-dev src/index.js"
   },
   "author": "Tobias Lins <tobias@lins.in>",
