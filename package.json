@@ -4,8 +4,8 @@
   "main": "src/index.js",
   "repository": "tobiaslins/avatar",
   "scripts": {
-    "start": "NODE_ENV=production micro src/index.js -p ${PORT:-3000}",
-    "dev": "micro-dev src/index.js"
+    "start": "NODE_ENV=production micro -p ${PORT:-3000}",
+    "dev": "micro-dev"
   },
   "author": "Tobias Lins <tobias@lins.in>",
   "license": "MIT",
