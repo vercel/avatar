@@ -65,3 +65,7 @@ We got all that covered for you.
 Just click this button:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tobiaslins/avatar)
+
+### Metrics
+
+![](https://metriks.herokuapp.com/graph)
