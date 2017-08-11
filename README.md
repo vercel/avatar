@@ -68,4 +68,8 @@ Just click this button:
 
 ### Metrics
 
-![](https://metriks.herokuapp.com/graph)
+#### Requests
+![](https://metriks.herokuapp.com/graphs/requests)
+
+#### Response Time
+![](https://metriks.herokuapp.com/graphs/ms)
