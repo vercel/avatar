@@ -1,5 +1,5 @@
 # avatar ![](https://avatar.tobi.sh/avatar?size=20) ![](https://avatar.tobi.sh/1?size=20) ![](https://avatar.tobi.sh/github?size=20) ![](https://avatar.tobi.sh/love?size=20) ![](https://avatar.tobi.sh/node?size=20)
-![](https://metriks.herokuapp.com/avatar/count)
+![](https://metriks.herokuapp.com/avatar/count?text=avatar)
 
 Avatar generates beautiful gradient avatars for your app or homepage (for example if they didn't upload one)
 
