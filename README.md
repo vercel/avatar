@@ -73,3 +73,6 @@ Just click this button:
 
 #### Response Time
 ![](https://metriks.herokuapp.com/avatar/graphs/ms)
+
+#### Reqests per second - last 5 minutes
+![](https://metriks.herokuapp.com/avatar/graphs/reqs)
