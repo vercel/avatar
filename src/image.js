@@ -26,11 +26,12 @@ function generateGradient(username, text, width, height) {
   let avatar = svg.replace('$FIRST', firstColor.hex())
   avatar = avatar.replace('$SECOND', helper.getMatchingColor(firstColor).hex())
 
-  avatar = avatar.replace(/(\$TEXT)/g, text)
-  avatar = avatar.replace(/(\$FONTSIZE)/g, (120 * 0.9) / text.length)
-
   avatar = avatar.replace(/(\$WIDTH)/g, width)
   avatar = avatar.replace(/(\$HEIGHT)/g, height)
+
+  avatar = avatar.replace(/(\$TEXT)/g, text)
+  avatar = avatar.replace(/(\$FONTSIZE)/g, (height * 0.9) / text.length)
+
 
   return avatar
 }
