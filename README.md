@@ -66,7 +66,7 @@ Just click this button:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tobiaslins/avatar)
 
-### Metrics
+### Realtime Metrics
 
 #### Requests
 ![](https://metrics.tobi.sh/avatar/graphs/requests)
