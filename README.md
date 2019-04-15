@@ -3,7 +3,7 @@
 
 Avatar generates beautiful gradient avatars for your app or homepage (for example if they didn't upload one)
 
-Avatar is built on top of [`micro`](https://github.com/zeit/micro) and is hosted on [`Heroku`](https://heroku.com)
+Avatar is built on top of [`micro`](https://github.com/zeit/micro) and is hosted on [Heroku](https://heroku.com)
 
 ## How to use avatar
 
@@ -60,7 +60,7 @@ Are you creating a new app/website with an user system?
 If your user doesn't want to load a custom profile picture - you can show him a unique generated avatar
 
 ### Deploy to Heroku
-Do you want to deploy avatar to Heroku!
+Do you want to deploy avatar to Heroku?
 We got all that covered for you.
 Just click this button:
 
