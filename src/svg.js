@@ -9,7 +9,7 @@ module.exports = `<?xml version="1.0" standalone="no"?>
       </linearGradient>
     </defs>
     <rect fill="url(#avatar)" x="0" y="0" width="$WIDTH" height="$HEIGHT"/>
-    <text x="50%" y="50%" alignment-baseline="central" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="$FONTSIZE">$TEXT</text>
+    <text x="50%" y="50%" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="$FONTSIZE">$TEXT</text>
   </g>
 </svg>
 `
