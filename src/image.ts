@@ -1,4 +1,4 @@
-const crypto = require('crypto')
+import crypto from "crypto"
 
 const sharp = require('sharp')
 const Color = require('color')
@@ -6,7 +6,7 @@ const Color = require('color')
 const svg = require('./svg')
 const helper = require('./helper')
 
-function generateGradient(username, text, width, height) {
+function generateGradient(username: string, text: string, width: number, height: number) {
   const hash = crypto.createHash('md5').update(username).digest('hex')
 
   let firstColor = helper.hashStringToColor(hash)
@@ -36,23 +36,23 @@ function generateGradient(username, text, width, height) {
   return avatar
 }
 
-function parseSize(size) {
+function parseSize(size: string) {
   const maxSize = 1000
-  if (size && size.match(/^-?\d+$/) && size <= maxSize) {
+  if (size && size.match(/^-?\d+$/) && parseInt(size, 10) <= maxSize) {
     return parseInt(size, 10)
   }
   return 120
 }
 
-exports.generateSVG = function(username, text, width, height) {
-  width = parseSize(width)
-  height = parseSize(height)
+exports.generateSVG = function(username: string, text: string, widthString: string, heightString:string) {
+  let width = parseSize(widthString)
+  let height = parseSize(heightString)
   return generateGradient(username, text, width, height)
 }
 
-exports.generatePNG = function(username, width, height) {
-  width = parseSize(width)
-  height = parseSize(height)
+exports.generatePNG = function(username: string, widthString: string, heightString: string) {
+  let width = parseSize(widthString)
+  let height = parseSize(heightString)
   const svg = generateGradient(username, '', width, height)
   return sharp(new Buffer(svg)).png()
 }

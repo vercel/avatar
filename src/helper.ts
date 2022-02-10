@@ -1,6 +1,6 @@
 'use strict'
 
-function djb2(str) {
+function djb2(str: string) {
   let hash = 5381
   for (let i = 0; i < str.length; i++) {
     hash = (hash << 5) + hash + str.charCodeAt(i)
@@ -8,7 +8,7 @@ function djb2(str) {
   return hash
 }
 
-function shouldChangeColor(color) {
+function shouldChangeColor(color: any) {
   const rgb = color.rgb().array()
   const val = 765 - (rgb[0] + rgb[1] + rgb[2])
   if (val < 250 || val > 700) {
@@ -17,7 +17,7 @@ function shouldChangeColor(color) {
   return false
 }
 
-function hashStringToColor(str) {
+function hashStringToColor(str: string) {
   const hash = djb2(str)
   const r = (hash & 0xff0000) >> 16
   const g = (hash & 0x00ff00) >> 8
@@ -30,7 +30,7 @@ function hashStringToColor(str) {
   )
 }
 
-function getMatchingColor(firstColor) {
+function getMatchingColor(firstColor: any) {
   let color = firstColor
   if (color.dark()) {
     color = color.saturate(0.3).rotate(90)
@@ -43,7 +43,7 @@ function getMatchingColor(firstColor) {
   return color
 }
 
-module.exports = {
+export {
   getMatchingColor,
   hashStringToColor,
   shouldChangeColor

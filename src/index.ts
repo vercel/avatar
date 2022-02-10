@@ -1,3 +1,5 @@
+import { IncomingMessage, ServerResponse } from "http"
+
 const url = require('url')
 const crypto = require('crypto')
 const image = require('./image')
@@ -5,7 +7,7 @@ const svgExt = /\.svg$/
 const pngExt = /\.png$/
 const sizePat = /^\d+x\d+$/
 
-module.exports = (req, res) => {
+module.exports = (req: IncomingMessage, res: ServerResponse) => {
   let { pathname, query } = url.parse(req.url, true)
   if (pathname === '/favicon.ico') {
     return ''
