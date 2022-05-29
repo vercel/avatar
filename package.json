@@ -12,7 +12,7 @@
   "dependencies": {
     "color": "^2.0.0",
     "micro": "^8.0.1",
-    "sharp": "^0.24.1",
+    "sharp": "^0.30.5",
     "url": "^0.11.0"
   },
   "devDependencies": {
