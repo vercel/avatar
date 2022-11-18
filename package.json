@@ -1,21 +1,25 @@
 {
   "name": "avatar",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "repository": "tobiaslins/avatar",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "NODE_ENV=production micro -p ${PORT:-3000}",
-    "dev": "micro-dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "author": "Tobias Lins <tobias@lins.in>",
-  "license": "MIT",
   "dependencies": {
-    "color": "^2.0.0",
-    "micro": "^8.0.1",
-    "sharp": "^0.24.1",
-    "url": "^0.11.0"
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@vercel/og": "^0.0.20",
+    "color": "^4.2.3",
+    "next": "13.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.3"
   },
   "devDependencies": {
-    "micro-dev": "^1.1.0"
+    "@types/color": "^3.0.3"
   }
 }
