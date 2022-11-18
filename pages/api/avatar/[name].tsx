@@ -1,6 +1,8 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest, NextResponse } from "next/server";
 import { renderToReadableStream } from "react-dom/server";
+import satori from "satori";
+
 import { generateGradient } from "../../../utils/gradient";
 
 export const config = {
@@ -17,43 +19,40 @@ export default async function (req: NextRequest, res: NextResponse) {
 
   const gradient = generateGradient(username || Math.random() + "");
 
-  const avatar = (
-    <svg
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
+  const gradientAvatar = (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: size,
+        height: size,
+        backgroundImage: `linear-gradient(315deg, ${gradient.fromColor}, ${gradient.toColor})`,
+      }}
     >
-      <g>
-        <defs>
-          <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor={gradient.fromColor} />
-            <stop offset="100%" stopColor={gradient.toColor} />
-          </linearGradient>
-        </defs>
-        <rect fill="url(#gradient)" x="0" y="0" width={size} height={size} />
-        {fileType === "svg" && text && (
-          <text
-            x="50%"
-            y="50%"
-            alignmentBaseline="central"
-            dominantBaseline="central"
-            textAnchor="middle"
-            fill="#fff"
-            fontFamily="sans-serif"
-            fontSize={(size * 0.9) / text.length}
-          >
-            {text}
-          </text>
-        )}
-      </g>
-    </svg>
+      {text ? (
+        <div
+          style={{
+            display: "flex",
+            fontSize: (size * 0.9) / text.length,
+          }}
+        >
+          {text}
+        </div>
+      ) : null}
+    </div>
   );
 
   if (fileType === "svg") {
-    const stream = await renderToReadableStream(avatar);
-    return new Response(stream, {
+    const svg = await satori(gradientAvatar, {
+      width: size,
+      height: size,
+      embedFont: false,
+      fonts: [],
+      debug: true,
+    });
+    //  const stream = await renderToReadableStream(svg);
+    return new Response(svg, {
       headers: {
         "Content-Type": "image/svg+xml",
         "Cache-Control": "public, max-age=604800, immutable",
@@ -61,7 +60,7 @@ export default async function (req: NextRequest, res: NextResponse) {
     });
   }
 
-  return new ImageResponse(avatar, {
+  return new ImageResponse(gradientAvatar, {
     width: size,
     height: size,
   });
