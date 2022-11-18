@@ -1,67 +1,34 @@
-# avatar ![](https://avatar.tobi.sh/avatar?size=20) ![](https://avatar.tobi.sh/1?size=20) ![](https://avatar.tobi.sh/github?size=20) ![](https://avatar.tobi.sh/love?size=20) ![](https://avatar.tobi.sh/node?size=20)
-![](https://metrics.tobi.sh/avatar/count?text=%20Avatars%20generated%20)
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Avatar generates beautiful gradient avatars for your app or homepage (for example if they didn't upload one)
+## Getting Started
 
-Avatar is built on top of [`micro`](https://github.com/zeit/micro) and is hosted on [Heroku](https://heroku.com)
+First, run the development server:
 
-## How to use avatar
-
-To generate an avatar just embed following URL `https://avatar.tobi.sh/`. Now you can append a username to generate an avatar
-
-You will receive a `png` image with a size of 120*120px
-
-Each name will generate a unique `avatar`. Just replace `tobiaslins` with an `username` or `email`
-
-### PNG avatar
-```
-https://avatar.tobi.sh/tobiaslins
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-![Avatar for tobiaslins](https://avatar.tobi.sh/tobiaslins)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Custom size
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-```
-https://avatar.tobi.sh/tobiaslins?size=30
-```
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-![Avatar for tobiaslins](https://avatar.tobi.sh/tobiaslins?size=30)
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-### SVG avatar
-It is possible to receive an svg avatar by adding the extension `.svg` or the parameter `type=svg`
+## Learn More
 
-```
-https://avatar.tobi.sh/tobiaslins.svg
-https://avatar.tobi.sh/tobiaslins?type=svg
-```
+To learn more about Next.js, take a look at the following resources:
 
-### Add initials
-It is possible to add initials or a text to the avatar by adding the `text` parameter.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-*Feature only working with SVG*
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-```
-https://avatar.tobi.sh/tobiaslins.svg?text=TL
-```
-![Avatar for tobiaslins](https://avatar.tobi.sh/tobiaslins.svg?text=TL)
+## Deploy on Vercel
 
-### Random avatar
-If you just want to use random avatars without providing usernames, you can use the root endpoint
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-```
-https://avatar.tobi.sh/
-```
-![Random Avatar](https://avatar.tobi.sh?size=50)
-
-## Usecase
-Are you creating a new app/website with an user system?
-
-If your user doesn't want to load a custom profile picture - you can show him a unique generated avatar
-
-### Deploy to Heroku
-Do you want to deploy avatar to Heroku?
-We got all that covered for you.
-Just click this button:
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tobiaslins/avatar)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
