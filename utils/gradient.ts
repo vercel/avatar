@@ -1,23 +1,19 @@
-import Color from "color";
-import { getMatchingColor, hashStringToColor } from "./helper";
+import color from "tinycolor2";
+
+export function djb2(str: string) {
+  let hash = 5381;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) + hash + str.charCodeAt(i);
+  }
+  return hash;
+}
 
 export function generateGradient(username: string) {
-  let firstColor = new Color(hashStringToColor(username)).saturate(0.5);
-
-  const lightning = firstColor.lightness();
-
-  if (lightning < 25) {
-    firstColor = firstColor.lighten(3);
-  }
-  if (lightning > 25 && lightning < 40) {
-    firstColor = firstColor.lighten(0.8);
-  }
-  if (lightning > 75) {
-    firstColor = firstColor.darken(0.4);
-  }
+  const c1 = color({ h: djb2(username) % 360, s: 0.95, l: 0.5 });
+  const second = c1.triad()[1].toHexString();
 
   return {
-    fromColor: firstColor.hex(),
-    toColor: getMatchingColor(firstColor).hex(),
+    fromColor: c1.toHexString(),
+    toColor: second,
   };
 }
