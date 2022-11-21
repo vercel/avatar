@@ -1,4 +1,4 @@
-# avatar ![](https://avatar.vercel.sh/avatar?size=20) ![](https://avatar.vercel.sh/1?size=20) ![](https://avatar.vercel.sh/github?size=20) ![](https://avatar.vercel.sh/love?size=20) ![](https://avatar.vercel.sh/node?size=20)
+# avatar ![](https://avatar.vercel.sh/rauchg?size=20) ![](https://avatar.vercel.sh/leerob?size=20) ![](https://avatar.vercel.sh/vercel?size=20) ![](https://avatar.vercel.sh/party?size=20) ![](https://avatar.vercel.sh/edge?size=20)
 
 Generate beautiful gradient avatars for your application.
 
@@ -7,27 +7,27 @@ Generate beautiful gradient avatars for your application.
 Provide a username to generate an avatar. Each name will generate a unique `avatar`. Just replace `tobiaslins` with an `username` or `email`:
 
 ```
-https://avatar.vercel.sh/tobiaslins
+https://avatar.vercel.sh/rauchg
 ```
 
 You will receive a `png` image with a size of 120\*120px
 
-![Avatar for tobiaslins](https://avatar.vercel.sh/tobiaslins)
+![Avatar for rauchg](https://avatar.vercel.sh/rauchg)
 
 ### Custom Size
 
 ```
-https://avatar.vercel.sh/tobiaslins?size=30
+https://avatar.vercel.sh/rauchg?size=30
 ```
 
-![Avatar for tobiaslins](https://avatar.vercel.sh/tobiaslins?size=30)
+![Avatar for rauchg](https://avatar.vercel.sh/rauchg?size=30)
 
 ### SVG
 
 Add the extension `.svg`:
 
 ```
-https://avatar.vercel.sh/tobiaslins.svg
+https://avatar.vercel.sh/rauchg.svg
 ```
 
 ### Add Initials
@@ -35,7 +35,7 @@ https://avatar.vercel.sh/tobiaslins.svg
 Add the `text` parameter (requires SVG):
 
 ```
-https://avatar.vercel.sh/tobiaslins.svg?text=TL
+https://avatar.vercel.sh/rauchg.svg?text=TL
 ```
 
-![Avatar for tobiaslins](https://avatar.vercel.sh/tobiaslins.svg?text=TL)
+![Avatar for rauchg](https://avatar.vercel.sh/rauchg.svg?text=TL)
