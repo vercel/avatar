@@ -1,6 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -14,23 +14,15 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Avatar</h1>
 
-        <div style={{ display: "flex", gap: 10 }}>
+        <div style={{ display: 'flex', gap: 10 }}>
           <img
             className={styles.avatar}
-            src="/api/avatar/vercel.svg?text=VC"
+            src="/vercel.svg?text=VC"
             alt="Vercel"
           />
-          <img className={styles.avatar} src="/api/avatar/1" alt="Vercel" />
-          <img
-            className={styles.avatar}
-            src="/api/avatar/satori"
-            alt="Vercel"
-          />
-          <img
-            className={styles.avatar}
-            src="/api/avatar/nextjs"
-            alt="Vercel"
-          />
+          <img className={styles.avatar} src="/1" alt="Vercel" />
+          <img className={styles.avatar} src="/satori" alt="Vercel" />
+          <img className={styles.avatar} src="/nextjs" alt="Vercel" />
         </div>
       </main>
 
@@ -40,7 +32,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
