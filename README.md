@@ -35,7 +35,7 @@ https://avatar.vercel.sh/rauchg.svg
 Add the `text` parameter (requires SVG):
 
 ```
-https://avatar.vercel.sh/rauchg.svg?text=TL
+https://avatar.vercel.sh/rauchg.svg?text=GR
 ```
 
-![Avatar for rauchg](https://avatar.vercel.sh/rauchg.svg?text=TL)
+![Avatar for rauchg](https://avatar.vercel.sh/rauchg.svg?text=GR)
