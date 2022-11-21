@@ -36,13 +36,13 @@ export default async function (req: NextRequest, res: NextResponse) {
         {fileType === "svg" && text && (
           <text
             x="50%"
-            y="50%"
+            y={text.length > 1 ? "54%" : "55.5%"}
             alignmentBaseline="central"
             dominantBaseline="central"
             textAnchor="middle"
             fill="#fff"
             fontFamily="sans-serif"
-            fontSize={(size * 0.9) / text.length}
+            fontSize={(size * 0.7) / text.length}
           >
             {text}
           </text>
