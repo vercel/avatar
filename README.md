@@ -24,11 +24,10 @@ https://avatar.vercel.app/tobiaslins?size=30
 
 ### SVG
 
-Add the extension `.svg` or the parameter `type=svg`
+Add the extension `.svg`:
 
 ```
 https://avatar.vercel.app/tobiaslins.svg
-https://avatar.vercel.app/tobiaslins?type=svg
 ```
 
 ### Add Initials
