@@ -11,6 +11,7 @@ export default async function (req: NextRequest, res: NextResponse) {
   const url = new URL(req.url);
   const name = url.searchParams.get("name");
   const text = url.searchParams.get("text");
+  const noise = url.searchParams.get("noise");
   const size = Number(url.searchParams.get("size") || "120");
   const [username, type] = name?.split(".") || [];
   const fileType = type?.includes("svg") ? "svg" : "png";
@@ -31,8 +32,26 @@ export default async function (req: NextRequest, res: NextResponse) {
             <stop offset="0%" stopColor={gradient.fromColor} />
             <stop offset="100%" stopColor={gradient.toColor} />
           </linearGradient>
+          {fileType === "svg" && noise !== null && (
+            <filter id="noise">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency={Math.min(Math.max(size / 150, 0.6), 2)}
+                result="noisy"
+              />
+              <feColorMatrix type="saturate" values="0" />
+              <feBlend in="SourceGraphic" in2="noisy" mode="multiply" />
+            </filter>
+          )}
         </defs>
-        <rect fill="url(#gradient)" x="0" y="0" width={size} height={size} />
+        <rect
+          fill="url(#gradient)"
+          x="0"
+          y="0"
+          width={size}
+          height={size}
+          filter="url(#noise)"
+        />
         {fileType === "svg" && text && (
           <text
             x="50%"
