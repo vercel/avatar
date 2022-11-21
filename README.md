@@ -4,7 +4,7 @@ Generate beautiful gradient avatars for your application.
 
 ## Usage
 
-Provide a username to generate an avatar. Each name will generate a unique `avatar`. Just replace `tobiaslins` with an `username` or `email`:
+Provide a username to generate an avatar. Each name will generate a unique `avatar`. Just replace `rauchg` with an `username` or `email`:
 
 ```
 https://avatar.vercel.sh/rauchg
