@@ -1,7 +1,7 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest, NextResponse } from "next/server";
 import { renderToReadableStream } from "react-dom/server";
-import { generateGradient } from "../../../utils/gradient";
+import { generateGradient, generateSolidColor } from "../../../utils/gradient";
 
 export const config = {
   runtime: "experimental-edge",
@@ -11,12 +11,13 @@ export default async function (req: NextRequest, res: NextResponse) {
   const url = new URL(req.url);
   const name = url.searchParams.get("name");
   const text = url.searchParams.get("text");
+  const solid = url.searchParams.get("solid");
   const size = Number(url.searchParams.get("size") || "120");
   const [username, type] = name?.split(".") || [];
   const fileType = type?.includes("svg") ? "svg" : "png";
 
   const gradient = generateGradient(username || Math.random() + "");
-
+  const solidColor = generateSolidColor(username || Math.random() + "");
   const avatar = (
     <svg
       width={size}
@@ -32,7 +33,13 @@ export default async function (req: NextRequest, res: NextResponse) {
             <stop offset="100%" stopColor={gradient.toColor} />
           </linearGradient>
         </defs>
-        <rect fill="url(#gradient)" x="0" y="0" width={size} height={size} />
+        <rect
+          fill={solid != null ? solidColor.color : "url(#gradient)"}
+          x="0"
+          y="0"
+          width={size}
+          height={size}
+        />
         {fileType === "svg" && text && (
           <text
             x="50%"
