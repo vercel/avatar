@@ -32,17 +32,16 @@ export default async function (req: NextRequest, res: NextResponse) {
             <stop offset="0%" stopColor={gradient.fromColor} />
             <stop offset="100%" stopColor={gradient.toColor} />
           </linearGradient>
-          {fileType === "svg" && noise !== null && (
-            <filter id="noise">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency={Math.min(Math.max(size / 150, 0.6), 2)}
-                result="noisy"
-              />
-              <feColorMatrix type="saturate" values="0" />
-              <feBlend in="SourceGraphic" in2="noisy" mode="multiply" />
-            </filter>
-          )}
+
+          <filter id="noise">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency={Math.min(Math.max(size / 150, 0.6), 2)}
+              result="noisy"
+            />
+            <feColorMatrix type="saturate" values="0" />
+            <feBlend in="SourceGraphic" in2="noisy" mode="multiply" />
+          </filter>
         </defs>
         <rect
           fill="url(#gradient)"
@@ -50,7 +49,7 @@ export default async function (req: NextRequest, res: NextResponse) {
           y="0"
           width={size}
           height={size}
-          filter="url(#noise)"
+          filter={fileType === "svg" && noise !== null ? "url(#noise)" : ""}
         />
         {fileType === "svg" && text && (
           <text
