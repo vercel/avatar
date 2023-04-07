@@ -1,13 +1,12 @@
-import { ImageResponse } from "@vercel/og";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, ImageResponse } from "next/server";
 import { renderToReadableStream } from "react-dom/server";
 import { generateGradient } from "../../../utils/gradient";
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "edge",
 };
 
-export default async function (req: NextRequest, res: NextResponse) {
+export default async function (req: NextRequest) {
   const url = new URL(req.url);
   const name = url.searchParams.get("name");
   const text = url.searchParams.get("text");
