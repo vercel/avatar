@@ -11,7 +11,7 @@ export default async function (req: NextRequest) {
   const name = url.searchParams.get("name");
   const text = url.searchParams.get("text");
   const size = Number(url.searchParams.get("size") || "120");
-  const [username, type] = name?.split(".") || [];
+  const { 0: username, length, [length - 1]: type }: { length: number, [key: number]: string } = name?.split(".") || [];
   const fileType = type?.includes("svg") ? "svg" : "png";
 
   const gradient = generateGradient(username || Math.random() + "");
