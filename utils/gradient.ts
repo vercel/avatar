@@ -9,11 +9,19 @@ export function djb2(str: string) {
 }
 
 export function generateGradient(username: string) {
-  const c1 = color({ h: djb2(username) % 360, s: 0.95, l: 0.5 });
+  const c1 = color({ h: djb2(username) % 360, s: 0.8, l: 0.6 });
   const second = c1.triad()[1].toHexString();
 
   return {
     fromColor: c1.toHexString(),
     toColor: second,
+  };
+}
+
+export function generateSolidColor(username: string) {
+  const c = color({ h: djb2(username) % 360, s: 0.7, l: 0.65 });
+
+  return {
+    color: c.toHexString(),
   };
 }
