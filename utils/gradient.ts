@@ -18,7 +18,8 @@ export function generateGradient(username: string) {
   const hue2 = Math.abs(hash2) % 360;
 
   const c1 = color({ h: hue, s: 0.95, l: 0.5 });
-  const c2 = color({ h: hue2, s: 0.95, l: 0.5 });
+  const triadColors = c1.triad();
+  const c2 = triadColors[1].spin(hue2);
 
   return {
     fromColor: c1.toHexString(),
