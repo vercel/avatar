@@ -20,7 +20,7 @@ export default function Home() {
             src="/vercel.svg?text=VC"
             alt="Vercel"
           />
-          <img className={styles.avatar} src="/1" alt="ID 1" />
+          <img className={styles.avatar} src="/42" alt="ID 42" />
           <img className={styles.avatar} src="/satori" alt="Satori" />
           <img className={styles.avatar} src="/next.js" alt="Next.js" />
         </div>
