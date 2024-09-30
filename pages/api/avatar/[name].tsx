@@ -14,7 +14,7 @@ export default async function (req: NextRequest) {
   const [username, type] = name?.split(".") || [];
   const fileType = type?.includes("svg") ? "svg" : "png";
 
-  const gradient = generateGradient(username || Math.random() + "");
+  const gradient = await generateGradient(username || Math.random() + "");
 
   const avatar = (
     <svg
