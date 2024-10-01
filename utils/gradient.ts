@@ -6,7 +6,7 @@ async function hash(str: string): Promise<number> {
   for (const n of new Uint8Array(buffer)) {
     sum += n;
   }
-  return sum % 360;
+  return sum;
 }
 
 async function hue(str: string): Promise<number> {
