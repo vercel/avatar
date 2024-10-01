@@ -1,15 +1,22 @@
 import color from "tinycolor2";
 
-export function djb2(str: string) {
-  let hash = 5381;
-  for (let i = 0; i < str.length; i++) {
-    hash = (hash << 5) + hash + str.charCodeAt(i);
+async function hash(str: string): Promise<number> {
+  let sum = 0;
+  const buffer = await crypto.subtle.digest('SHA-1', new TextEncoder().encode(str))
+  for (const n of new Uint8Array(buffer)) {
+    sum += n;
   }
-  return hash;
+  return sum % 360;
 }
 
-export function generateGradient(username: string) {
-  const c1 = color({ h: djb2(username) % 360, s: 0.95, l: 0.5 });
+async function hue(str: string): Promise<number> {
+  const n = await hash(str);
+  return n % 360;
+}
+
+export async function generateGradient(username: string) {
+  const h = await hue(username);
+  const c1 = color({ h, s: 0.95, l: 0.5 });
   const second = c1.triad()[1].toHexString();
 
   return {
