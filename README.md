@@ -22,7 +22,6 @@ https://avatar.vercel.sh/rauchg?rounded=60
 
 ![Avatar for rauchg](https://avatar.vercel.sh/rauchg?rounded=60)
 
-
 ### Custom Size
 
 ```
