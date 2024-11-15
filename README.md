@@ -14,6 +14,14 @@ You will receive a `png` image with a size of 120\*120px
 
 ![Avatar for rauchg](https://avatar.vercel.sh/rauchg)
 
+### Adjust Roundness
+
+```
+https://avatar.vercel.sh/rauchg?rounded=60
+```
+
+![Avatar for rauchg](https://avatar.vercel.sh/rauchg?rounded=60)
+
 ### Custom Size
 
 ```
