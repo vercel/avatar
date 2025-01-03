@@ -1,6 +1,5 @@
 import { ImageResponse } from 'next/og'
 import type { NextRequest } from 'next/server'
-import * as React from 'react'
 import { renderToReadableStream } from 'react-dom/server'
 import { generateGradient } from '../../../utils/gradient'
 
@@ -12,13 +11,6 @@ export default async function handler(req: NextRequest) {
   const text = searchParams.get('text')
   const size = Number(searchParams.get('size') || '120')
   const rounded = Number(searchParams.get('rounded') || '0')
-
-  console.log({
-    name,
-    text,
-    size,
-    rounded,
-  })
 
   const [username, type] = name?.split('.') || []
   const fileType = type?.includes('svg') ? 'svg' : 'png'
