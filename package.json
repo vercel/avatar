@@ -4,22 +4,22 @@
   "private": true,
   "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "20.1.5",
-    "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4",
-    "next": "13.4.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "@types/node": "22.10.5",
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2",
+    "next": "15.1.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "tinycolor2": "^1.6.0",
-    "typescript": "5.0.4"
+    "typescript": "5.7.2"
   },
   "devDependencies": {
-    "@types/tinycolor2": "^1.4.3"
+    "@types/tinycolor2": "^1.4.6"
   }
 }
