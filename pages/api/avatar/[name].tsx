@@ -13,6 +13,13 @@ export default async function handler(req: NextRequest) {
   const size = Number(searchParams.get('size') || '120')
   const rounded = Number(searchParams.get('rounded') || '0')
 
+  console.log({
+    name,
+    text,
+    size,
+    rounded,
+  })
+
   const [username, type] = name?.split('.') || []
   const fileType = type?.includes('svg') ? 'svg' : 'png'
 
@@ -26,7 +33,6 @@ export default async function handler(req: NextRequest) {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>{username}</title>
       <g>
         <defs>
           <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
@@ -43,7 +49,7 @@ export default async function handler(req: NextRequest) {
           rx={rounded}
           ry={rounded}
         />
-        {fileType === 'svg' && text && (
+        {fileType === 'svg' && !!text ? (
           <text
             x="50%"
             y="50%"
@@ -56,7 +62,7 @@ export default async function handler(req: NextRequest) {
           >
             {text}
           </text>
-        )}
+        ) : null}
       </g>
     </svg>
   )
