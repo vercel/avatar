@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og'
 import type { NextRequest } from 'next/server'
 import { generateGradient } from '../../../../utils/gradient'
+const { renderToReadableStream } = require('react-dom/server')
 
 export const config = {
   runtime: 'edge',
@@ -10,15 +11,12 @@ export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ name: string }> }
 ) {
-  // @ts-expect-error
-  const renderToReadableStream = (await import('react-dom/server.edge'))
-    .renderToReadableStream
-
-  const url = new URL(req.nextUrl)
   const name = (await params).name
-  const text = url.searchParams.get('text')
-  const size = Number(url.searchParams.get('size') || '120')
-  const rounded = Number(url.searchParams.get('rounded') || '0')
+  const searchParams = req.nextUrl.searchParams
+
+  const text = searchParams.get('text')
+  const size = Number(searchParams.get('size') || '120')
+  const rounded = Number(searchParams.get('rounded') || '0')
   const [username, type] = name?.split('.') || []
   const fileType = type?.includes('svg') ? 'svg' : 'png'
 
@@ -68,8 +66,8 @@ export async function GET(
   )
 
   if (fileType === 'svg') {
-    const stream = await renderToReadableStream(avatar)
-    return new Response(stream, {
+    const svg = await renderToReadableStream(avatar)
+    return new Response(svg, {
       headers: {
         'Content-Type': 'image/svg+xml',
         'Cache-Control': 'public, max-age=604800, immutable',
