@@ -1,21 +1,22 @@
-import { NextRequest, ImageResponse } from "next/server";
-import { renderToReadableStream } from "react-dom/server";
-import { generateGradient } from "../../../utils/gradient";
+import { ImageResponse } from 'next/og'
+import type { NextRequest } from 'next/server'
+import * as React from 'react'
+import { renderToReadableStream } from 'react-dom/server'
+import { generateGradient } from '../../../utils/gradient'
 
-export const config = {
-  runtime: "edge",
-};
+export const runtime = 'edge'
 
-export default async function (req: NextRequest) {
-  const url = new URL(req.url);
-  const name = url.searchParams.get("name");
-  const text = url.searchParams.get("text");
-  const size = Number(url.searchParams.get("size") || "120");
-  const rounded = Number(url.searchParams.get("rounded") || "0");
-  const [username, type] = name?.split(".") || [];
-  const fileType = type?.includes("svg") ? "svg" : "png";
-  
-  const gradient = await generateGradient(username || Math.random() + "");
+export default async function handler(req: NextRequest) {
+  const searchParams = req.nextUrl.searchParams
+  const name = searchParams.get('name')
+  const text = searchParams.get('text')
+  const size = Number(searchParams.get('size') || '120')
+  const rounded = Number(searchParams.get('rounded') || '0')
+
+  const [username, type] = name?.split('.') || []
+  const fileType = type?.includes('svg') ? 'svg' : 'png'
+
+  const gradient = await generateGradient(username || `${Math.random()}`)
 
   const avatar = (
     <svg
@@ -25,6 +26,7 @@ export default async function (req: NextRequest) {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>{username}</title>
       <g>
         <defs>
           <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
@@ -32,8 +34,16 @@ export default async function (req: NextRequest) {
             <stop offset="100%" stopColor={gradient.toColor} />
           </linearGradient>
         </defs>
-        <rect fill="url(#gradient)" x="0" y="0" width={size} height={size} rx={rounded} ry={rounded} />
-        {fileType === "svg" && text && (
+        <rect
+          fill="url(#gradient)"
+          x="0"
+          y="0"
+          width={size}
+          height={size}
+          rx={rounded}
+          ry={rounded}
+        />
+        {fileType === 'svg' && text && (
           <text
             x="50%"
             y="50%"
@@ -49,20 +59,20 @@ export default async function (req: NextRequest) {
         )}
       </g>
     </svg>
-  );
+  )
 
-  if (fileType === "svg") {
-    const stream = await renderToReadableStream(avatar);
+  if (fileType === 'svg') {
+    const stream = await renderToReadableStream(avatar)
     return new Response(stream, {
       headers: {
-        "Content-Type": "image/svg+xml",
-        "Cache-Control": "public, max-age=604800, immutable",
+        'Content-Type': 'image/svg+xml',
+        'Cache-Control': 'public, max-age=604800, immutable',
       },
-    });
+    })
   }
 
   return new ImageResponse(avatar, {
     width: size,
     height: size,
-  });
+  })
 }
