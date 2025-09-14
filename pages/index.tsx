@@ -14,7 +14,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Avatar</h1>
 
-        <div style={{ display: 'flex', gap: 10 }}>
+        <div style={{ display: 'flex', gap: 10, marginTop: '20px' }}>
           <img
             className={styles.avatar}
             src="/vercel.svg?text=VC"
